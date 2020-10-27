@@ -15,7 +15,7 @@ arch=$(uname -m)
 # here we get arch
 if [ "$arch" = "aarch64" ]; then
   arch="arm64"
-if [ "$arch" = "armv7l" ]; then
+elif [ "$arch" = "armv7l" ]; then
   arch="arm"
 fi
 
