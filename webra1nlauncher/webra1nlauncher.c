@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
         char *P = "-p";
         char *arg1 = argv[1];
 
-        int arg2 = 65536;
+        int arg2 = 8080;
 
         char command[100];
 
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 
             if ((arg2 >= 1 && arg2 <= 65535)) {
             	// checking if specified port is correct
-                sprintf(command, "/usr/bin/checkra1n --wui 0.0.0.0 %d", arg2);
+                sprintf(command, "/usr/bin/checkra1n --wui 10.0.0.3 %d", arg2);
             	system(command);
             } else {
                 fprintf(stderr, "\033[0;31mSpecified port is invalid.\033[0m\n");
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
         }
 
 	} else {
-		system("/usr/bin/checkra1n --wui 0.0.0.0 80");
+		system("/usr/bin/checkra1n --wui 10.0.0.3 8080");
 	}
 
 	return 0;
