@@ -19,13 +19,13 @@ elif [ "$arch" = "armv7l" ]; then
   arch="arm"
 fi
 
-if [ "$(echo "$links" | grep "$arch")" ]; then
-  link=$(echo "$links" | grep "$arch")
+if [ "$(echo "$links" | grep "\$arch\>")" ]; then
+  link=$(echo "$links" | grep "\$arch\>")
 else
   fatal "Looks like we can't download checkra1n for you architecture ($arch)"
 fi
 
-link=$(echo "$links" | grep "$arch")
+link=$(echo "$links" | grep "\$arch\>")
 # here we have the link corresponding to machine's arch
 
 wget "$link" -O "checkra1n"
