@@ -19,8 +19,8 @@ elif [ "$arch" = "armv7l" ]; then
   arch="/arm/"
 fi
 
-if [ "$(echo "$links" | grep -w "$arch")" ]; then
-  link=$(echo "$links" | grep -w "$arch")
+if [ "$(echo "$links" | grep "$arch")" ]; then
+  link=$(echo "$links" | grep "$arch")
 else
   fatal "Looks like we can't download checkra1n for you architecture ($arch)"
 fi
