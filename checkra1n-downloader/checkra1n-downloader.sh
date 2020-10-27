@@ -14,9 +14,9 @@ links=$(curl -sL "https://checkra.in/releases" | grep 'class="download-btn"' | s
 arch=$(uname -m)
 # here we get arch
 if [ "$arch" = "aarch64" ]; then
-  arch="arm64"
+  arch="/arm64/"
 elif [ "$arch" = "armv7l" ]; then
-  arch="arm"
+  arch="/arm/"
 fi
 
 if [ "$(echo "$links" | grep -w "$arch")" ]; then
